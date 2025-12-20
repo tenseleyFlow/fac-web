@@ -1,0 +1,17 @@
+{
+  "name": "facsimile-site",
+  "type": "module",
+  "version": "0.0.1",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build && npm run copy-releases",
+    "copy-releases": "mkdir -p dist/releases/fortran dist/releases/rust && cp -r public/releases/fortran/* dist/releases/fortran/ 2>/dev/null || true && cp -r public/releases/rust/* dist/releases/rust/ 2>/dev/null || true",
+    "preview": "astro preview",
+    "add-release": "node scripts/add-release.js",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "@astrojs/sitemap": "^3.6.0",
+    "astro": "^5.16.4"
+  }
+}

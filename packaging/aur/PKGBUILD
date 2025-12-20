@@ -1,0 +1,37 @@
+# Maintainer: Matthew Forrester Wolffe <espadon@outlook.com>
+pkgname=fackr
+pkgver=0.1.0
+pkgrel=1
+pkgdesc="Terminal text editor written in Rust with VSCode-style keybindings"
+arch=('x86_64' 'aarch64')
+url="https://github.com/TenseleyFlow/fackr"
+license=('MIT')
+depends=('gcc-libs')
+makedepends=('rust' 'cargo')
+provides=('fac')
+conflicts=('facsimile')
+source=("$pkgname-$pkgver.tar.gz::https://github.com/TenseleyFlow/fackr/archive/refs/tags/v$pkgver.tar.gz")
+sha256sums=('SKIP')
+
+build() {
+    cd "$pkgname-$pkgver"
+    cargo build --release --locked
+}
+
+check() {
+    cd "$pkgname-$pkgver"
+    cargo test --release --locked
+}
+
+package() {
+    cd "$pkgname-$pkgver"
+
+    # Install binary
+    install -Dm755 "target/release/fac" "$pkgdir/usr/bin/fac"
+
+    # Install documentation
+    install -Dm644 "README.md" "$pkgdir/usr/share/doc/$pkgname/README.md"
+
+    # Install license
+    install -Dm644 "LICENSE" "$pkgdir/usr/share/licenses/$pkgname/LICENSE" 2>/dev/null || true
+}

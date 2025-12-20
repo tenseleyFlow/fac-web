@@ -1,0 +1,331 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const structuredData = {
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "facsimile",
+  "applicationCategory": "DeveloperApplication",
+  "operatingSystem": "Windows, macOS, Linux",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "featureList": [
+    "VSCode-style keybindings",
+    "Syntax highlighting for 30+ languages",
+    "LSP support with completions, diagnostics, and find references",
+    "Multiple cursors and selections",
+    "File tree with git integration",
+    "Search and replace with full regex support (Ctrl+F/Ctrl+R)",
+    "Split panes and tabs",
+    "Undo/redo with branching history"
+  ]
+};
+---
+
+<BaseLayout
+  title="Features - facsimile Terminal Text Editor"
+  description="Explore facsimile's powerful features: VSCode keybindings, syntax highlighting, LSP support, multiple cursors, git integration, and more. The best terminal editor for developers."
+  keywords="terminal editor features, vscode keybindings terminal, lsp terminal editor, syntax highlighting cli, multiple cursors terminal, git integration editor, best terminal text editor"
+>
+  <script type="application/ld+json" set:html={JSON.stringify(structuredData)} />
+
+  <section>
+    <h2 style="margin-top: 0;">Features</h2>
+    <p style="font-size: 1.1rem; margin-bottom: 2rem;">
+      facsimile combines the power of terminal-based editing with the familiarity of modern IDEs.
+      No modes to learn, no arcane commands to memorize.
+    </p>
+
+    <div class="features-grid">
+      <article class="feature-card">
+        <div class="feature-icon">
+          <svg viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="currentColor" stroke-width="2">
+            <rect x="3" y="3" width="18" height="18" rx="2"/>
+            <path d="M9 9h6M9 13h6M9 17h4"/>
+          </svg>
+        </div>
+        <h3>VSCode-Style Keybindings</h3>
+        <p>
+          Use the keyboard shortcuts you already know. Ctrl+C/V/X for clipboard, Ctrl+S to save,
+          Ctrl+F to find, Ctrl+G to go to line. No mode switching, no learning curve.
+        </p>
+        <div class="keybindings">
+          <span class="key">Ctrl+S</span> Save
+          <span class="key">Ctrl+F</span> Find
+          <span class="key">Ctrl+Z</span> Undo
+        </div>
+      </article>
+
+      <article class="feature-card">
+        <div class="feature-icon">
+          <svg viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="4,17 10,11 4,5"/>
+            <line x1="12" y1="19" x2="20" y2="19"/>
+          </svg>
+        </div>
+        <h3>Syntax Highlighting</h3>
+        <p>
+          Beautiful syntax highlighting for over 30 programming languages including Python, JavaScript,
+          TypeScript, Rust, Go, C/C++, Java, Ruby, and more. Automatically detected from file extension.
+        </p>
+        <div class="lang-tags">
+          <span>Python</span><span>JavaScript</span><span>Rust</span><span>Go</span><span>C++</span><span>30+</span>
+        </div>
+      </article>
+
+      <article class="feature-card">
+        <div class="feature-icon">
+          <svg viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="10"/>
+            <path d="M12 6v6l4 2"/>
+          </svg>
+        </div>
+        <h3>LSP Support</h3>
+        <p>
+          Full Language Server Protocol integration provides intelligent code completion,
+          real-time diagnostics, go-to-definition, find all references (Shift+F12), and hover documentation.
+        </p>
+        <ul class="feature-list">
+          <li>auto-completion</li>
+          <li>error diagnostics</li>
+          <li>go to definition (F12)</li>
+          <li>find all references (Shift+F12)</li>
+          <li>hover documentation</li>
+        </ul>
+      </article>
+
+      <article class="feature-card">
+        <div class="feature-icon">
+          <svg viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M4 4h16v16H4z"/>
+            <path d="M4 12h16M12 4v16"/>
+          </svg>
+        </div>
+        <h3>Multiple Cursors</h3>
+        <p>
+          Edit multiple locations simultaneously with multiple cursor support. Add cursors with
+          Ctrl+Click or Ctrl+D to select next occurrence. Perfect for refactoring and bulk edits.
+        </p>
+        <div class="keybindings">
+          <span class="key">Ctrl+D</span> Add next
+          <span class="key">Ctrl+Click</span> Add cursor
+        </div>
+      </article>
+
+      <article class="feature-card">
+        <div class="feature-icon">
+          <svg viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M22 19a2 2 0 01-2 2H4a2 2 0 01-2-2V5a2 2 0 012-2h5l2 3h9a2 2 0 012 2z"/>
+          </svg>
+        </div>
+        <h3>File Tree with Git Integration</h3>
+        <p>
+          Navigate your project with the built-in file explorer (Ctrl+B). See git status at a glance
+          with visual indicators for modified, staged, and untracked files.
+        </p>
+        <ul class="feature-list">
+          <li>tree navigation</li>
+          <li>git status indicators</li>
+          <li>quick file open</li>
+          <li>hidden file toggle</li>
+        </ul>
+      </article>
+
+      <article class="feature-card">
+        <div class="feature-icon">
+          <svg viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="11" cy="11" r="8"/>
+            <path d="M21 21l-4.35-4.35"/>
+          </svg>
+        </div>
+        <h3>Search and Replace</h3>
+        <p>
+          Powerful search with full regex support. Find and replace across files with Ctrl+F and Ctrl+R,
+          with preview before applying changes. Incremental search highlights matches as you type.
+        </p>
+        <div class="keybindings">
+          <span class="key">Ctrl+F</span> Find
+          <span class="key">Ctrl+R</span> Replace
+          <span class="key">F3</span> Next match
+        </div>
+      </article>
+
+      <article class="feature-card">
+        <div class="feature-icon">
+          <svg viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="currentColor" stroke-width="2">
+            <rect x="3" y="3" width="7" height="9"/>
+            <rect x="14" y="3" width="7" height="9"/>
+            <rect x="3" y="14" width="18" height="7"/>
+          </svg>
+        </div>
+        <h3>Split Panes and Tabs</h3>
+        <p>
+          Work on multiple files side-by-side with split panes. Organize your workspace with tabs
+          and quickly switch between open files with Alt+number shortcuts.
+        </p>
+        <div class="keybindings">
+          <span class="key">Ctrl+\</span> Split
+          <span class="key">Alt+1-9</span> Switch tab
+        </div>
+      </article>
+
+      <article class="feature-card">
+        <div class="feature-icon">
+          <svg viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M3 12h4l3-9 4 18 3-9h4"/>
+          </svg>
+        </div>
+        <h3>Undo/Redo with History</h3>
+        <p>
+          Never lose your work with comprehensive undo/redo support and branching edit history.
+          Navigate through your edit timeline and recover from any state.
+        </p>
+        <div class="keybindings">
+          <span class="key">Ctrl+Z</span> Undo
+          <span class="key">Ctrl+Y</span> Redo
+        </div>
+      </article>
+    </div>
+
+    <h2>Why Choose facsimile?</h2>
+    <div class="comparison-section">
+      <div class="comparison-point">
+        <h4>vs Vim/Neovim</h4>
+        <p>No modal editing. Use familiar keybindings immediately without weeks of learning. Still runs in your terminal with the same speed.</p>
+      </div>
+      <div class="comparison-point">
+        <h4>vs Nano</h4>
+        <p>Full-featured IDE experience with syntax highlighting, LSP, multiple cursors, and split panes. More power without more complexity.</p>
+      </div>
+      <div class="comparison-point">
+        <h4>vs VSCode Remote</h4>
+        <p>Native terminal performance. No latency over SSH. Works offline. Lightweight and fast to start.</p>
+      </div>
+    </div>
+
+    <div style="text-align: center; margin-top: 3rem;">
+      <a href="/downloads" class="btn">Download Now</a>
+      <a href="/" class="btn btn-secondary">Back to Home</a>
+    </div>
+  </section>
+
+  <style>
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.5rem;
+      margin: 2rem 0;
+    }
+
+    .feature-card {
+      background: var(--bg-secondary);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 1.5rem;
+      transition: border-color 0.2s, transform 0.2s;
+    }
+
+    .feature-card:hover {
+      border-color: var(--border-light);
+      transform: translateY(-2px);
+    }
+
+    .feature-icon {
+      color: var(--text-muted);
+      margin-bottom: 1rem;
+    }
+
+    .feature-card h3 {
+      font-size: 1.1rem;
+      font-weight: 600;
+      margin-bottom: 0.75rem;
+      color: var(--text);
+    }
+
+    .feature-card p {
+      font-size: 0.9rem;
+      line-height: 1.6;
+      margin-bottom: 1rem;
+    }
+
+    .keybindings {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      align-items: center;
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+
+    .key {
+      background: var(--bg-tertiary);
+      border: 1px solid var(--border);
+      padding: 0.2rem 0.5rem;
+      border-radius: 4px;
+      font-family: 'SF Mono', monospace;
+      font-size: 0.75rem;
+      margin-right: 0.25rem;
+    }
+
+    .lang-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    .lang-tags span {
+      background: var(--bg-tertiary);
+      border: 1px solid var(--border);
+      padding: 0.25rem 0.5rem;
+      border-radius: 4px;
+      font-size: 0.75rem;
+      color: var(--text-muted);
+    }
+
+    .feature-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      font-size: 0.85rem;
+    }
+
+    .feature-list li {
+      padding: 0.25rem 0;
+      color: var(--text-muted);
+    }
+
+    .feature-list li::before {
+      content: "✓ ";
+      color: #27c93f;
+    }
+
+    .comparison-section {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+      margin: 1.5rem 0;
+    }
+
+    .comparison-point {
+      background: var(--bg-secondary);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 1.25rem;
+    }
+
+    .comparison-point h4 {
+      font-size: 1rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+      color: var(--text);
+    }
+
+    .comparison-point p {
+      font-size: 0.9rem;
+      margin: 0;
+    }
+  </style>
+</BaseLayout>

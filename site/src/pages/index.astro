@@ -1,0 +1,293 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const structuredData = {
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "facsimile",
+  "alternateName": ["fac", "fackr"],
+  "applicationCategory": "DeveloperApplication",
+  "applicationSubCategory": "Text Editor",
+  "operatingSystem": "Windows, macOS, Linux",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD",
+    "availability": "https://schema.org/InStock"
+  },
+  "description": "A free, open-source terminal text editor with VSCode-style keybindings. No modes to learn, no arcane commands. Works over SSH. Available for Windows, macOS, and Linux.",
+  "softwareVersion": "0.7.6",
+  "downloadUrl": "https://facsimile.musicsian.com/downloads",
+  "releaseNotes": "https://github.com/FortranGoingOnForty/facsimile/releases",
+  "screenshot": "https://facsimile.musicsian.com/image/fac-preview.png",
+  "softwareHelp": {
+    "@type": "WebPage",
+    "url": "https://facsimile.musicsian.com/keybindings"
+  },
+  "author": {
+    "@type": "Person",
+    "name": "Matthew Forrester Wolffe"
+  },
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "5",
+    "ratingCount": "1",
+    "bestRating": "5"
+  }
+};
+
+---
+
+<BaseLayout
+  title="facsimile - Free Terminal Text Editor with VSCode Keybindings | Best Vim Alternative"
+  description="facsimile is a free, open-source terminal text editor with VSCode-style keybindings. No modes to learn. Syntax highlighting, LSP support, multiple cursors. Works on Windows, macOS, Linux. The best Vim and Nano alternative."
+  keywords="terminal editor, terminal text editor, best terminal editor, vim alternative, nano alternative, vscode keybindings terminal, cli editor, command line editor, ssh editor, console text editor, tui editor, fortran editor, rust editor, free text editor"
+>
+  <script type="application/ld+json" set:html={JSON.stringify(structuredData)} />
+
+  <section>
+    <div style="text-align: center; margin-bottom: 2rem;">
+      <p style="font-size: 1.1rem; max-width: 600px; margin: 0 auto;">
+        facsimile brings VSCode's familiar keybindings to your terminal.
+        No modes to learn, no arcane commands to memorize.
+      </p>
+    </div>
+
+    <div class="lang-toggle" id="lang-toggle">
+      <button class="lang-btn active" data-lang="fortran">Fortran</button>
+      <button class="lang-btn" data-lang="rust">Rust</button>
+    </div>
+
+    <!-- Fortran Content -->
+    <div id="fortran-content" class="lang-content">
+      <div style="text-align: center; margin-bottom: 2rem;">
+        <span class="badge available">AUR</span>
+        <span class="badge available">Homebrew</span>
+        <span class="badge available">RPM</span>
+        <span class="badge available">Source</span>
+      </div>
+
+      <h2>Install</h2>
+
+      <div class="terminal-wrapper">
+        <div class="terminal">
+          <div class="terminal-header">
+            <div class="terminal-controls">
+              <button class="control-btn close" aria-label="Collapse"></button>
+              <button class="control-btn minimize" aria-label="Minimize"></button>
+              <button class="control-btn maximize" aria-label="Maximize"></button>
+            </div>
+            <div class="terminal-title">Terminal</div>
+          </div>
+          <div class="terminal-body">
+            <div class="terminal-line comment"># Homebrew (macOS)</div>
+            <div class="terminal-line command"><span class="prompt">$</span> brew tap FortranGoingOnForty/facsimile</div>
+            <div class="terminal-line command"><span class="prompt">$</span> brew install facsimile</div>
+            <div class="terminal-line" style="margin-top: 1rem;"></div>
+            <div class="terminal-line comment"># AUR (Arch Linux)</div>
+            <div class="terminal-line command"><span class="prompt">$</span> yay -S facsimile</div>
+            <div class="terminal-line" style="margin-top: 1rem;"></div>
+            <div class="terminal-line comment"># RPM (Fedora/RHEL)</div>
+            <div class="terminal-line command"><span class="prompt">$</span> sudo dnf copr enable fortrangoingonforty/facsimile</div>
+            <div class="terminal-line command"><span class="prompt">$</span> sudo dnf install facsimile</div>
+          </div>
+        </div>
+      </div>
+
+      <div style="text-align: center; margin-top: 2rem;">
+        <a href="/downloads" class="btn">Download Binary</a>
+        <a href="https://github.com/FortranGoingOnForty/facsimile" class="btn btn-secondary">View Source</a>
+      </div>
+
+      <h2>Why Fortran?</h2>
+      <p>
+        Modern Fortran is a compiled language with excellent performance characteristics.
+        The Fortran implementation is mature, feature-complete, and battle-tested with
+        full LSP support, syntax highlighting, and advanced text manipulation.
+      </p>
+    </div>
+
+    <!-- Rust Content -->
+    <div id="rust-content" class="lang-content" style="display: none;">
+      <div style="text-align: center; margin-bottom: 2rem;">
+        <span class="badge available">AUR</span>
+        <span class="badge available">Homebrew</span>
+        <span class="badge available">RPM</span>
+        <span class="badge available">Source</span>
+      </div>
+
+      <h2>Install</h2>
+
+      <div class="terminal-wrapper">
+        <div class="terminal">
+          <div class="terminal-header">
+            <div class="terminal-controls">
+              <button class="control-btn close" aria-label="Collapse"></button>
+              <button class="control-btn minimize" aria-label="Minimize"></button>
+              <button class="control-btn maximize" aria-label="Maximize"></button>
+            </div>
+            <div class="terminal-title">Terminal</div>
+          </div>
+          <div class="terminal-body">
+            <div class="terminal-line comment"># Homebrew (macOS)</div>
+            <div class="terminal-line command"><span class="prompt">$</span> brew tap TenseleyFlow/fackr</div>
+            <div class="terminal-line command"><span class="prompt">$</span> brew install fackr</div>
+            <div class="terminal-line" style="margin-top: 1rem;"></div>
+            <div class="terminal-line comment"># AUR (Arch Linux)</div>
+            <div class="terminal-line command"><span class="prompt">$</span> yay -S fackr</div>
+            <div class="terminal-line" style="margin-top: 1rem;"></div>
+            <div class="terminal-line comment"># RPM (Fedora/RHEL)</div>
+            <div class="terminal-line command"><span class="prompt">$</span> sudo dnf config-manager --add-repo https://repos.musicsian.com/musicsian.repo</div>
+            <div class="terminal-line command"><span class="prompt">$</span> sudo dnf install fackr</div>
+          </div>
+        </div>
+      </div>
+
+      <div style="text-align: center; margin-top: 2rem;">
+        <a href="/downloads" class="btn">Download Binary</a>
+        <a href="https://github.com/TenseleyFlow/fackr" class="btn btn-secondary">View Source</a>
+      </div>
+
+      <h2>Why Rust?</h2>
+      <p>
+        The Rust port (fackr) prioritizes performance on remote connections and
+        memory safety. It's a ground-up rewrite designed for speed, with a rope-based
+        text buffer and modern async architecture. Currently in active development.
+      </p>
+    </div>
+
+    <h2>Features</h2>
+    <ul style="margin-left: 2rem; margin-top: 1rem;">
+      <li>VSCode-style keybindings (Ctrl+C/V/X, Ctrl+S, Ctrl+F, etc.)</li>
+      <li>syntax highlighting for 30+ languages</li>
+      <li>LSP support (completions, diagnostics, go-to-definition)</li>
+      <li>file tree navigation with git integration</li>
+      <li>search and replace with regex support</li>
+      <li>multiple cursors and selections</li>
+      <li>tabs and split panes</li>
+      <li>undo/redo with branching history</li>
+      <li>bracket matching and auto-indent</li>
+    </ul>
+
+    <h2>Quick Start</h2>
+    <div id="quickstart-fortran" class="terminal-wrapper">
+      <div class="terminal">
+        <div class="terminal-header">
+          <div class="terminal-controls">
+            <button class="control-btn close" aria-label="Collapse"></button>
+            <button class="control-btn minimize" aria-label="Minimize"></button>
+            <button class="control-btn maximize" aria-label="Maximize"></button>
+          </div>
+          <div class="terminal-title">Terminal</div>
+        </div>
+        <div class="terminal-body">
+          <div class="terminal-line comment"># Open a file</div>
+          <div class="terminal-line command"><span class="prompt">$</span> fac myfile.py</div>
+          <div class="terminal-line" style="margin-top: 1rem;"></div>
+          <div class="terminal-line comment"># Open current directory</div>
+          <div class="terminal-line command"><span class="prompt">$</span> fac .</div>
+          <div class="terminal-line" style="margin-top: 1rem;"></div>
+          <div class="terminal-line comment"># Create new file</div>
+          <div class="terminal-line command"><span class="prompt">$</span> fac newfile.rs</div>
+        </div>
+      </div>
+    </div>
+    <div id="quickstart-rust" class="terminal-wrapper" style="display: none;">
+      <div class="terminal">
+        <div class="terminal-header">
+          <div class="terminal-controls">
+            <button class="control-btn close" aria-label="Collapse"></button>
+            <button class="control-btn minimize" aria-label="Minimize"></button>
+            <button class="control-btn maximize" aria-label="Maximize"></button>
+          </div>
+          <div class="terminal-title">Terminal</div>
+        </div>
+        <div class="terminal-body">
+          <div class="terminal-line comment"># Open a file</div>
+          <div class="terminal-line command"><span class="prompt">$</span> fackr myfile.py</div>
+          <div class="terminal-line" style="margin-top: 1rem;"></div>
+          <div class="terminal-line comment"># Open current directory</div>
+          <div class="terminal-line command"><span class="prompt">$</span> fackr .</div>
+          <div class="terminal-line" style="margin-top: 1rem;"></div>
+          <div class="terminal-line comment"># Create new file</div>
+          <div class="terminal-line command"><span class="prompt">$</span> fackr newfile.rs</div>
+        </div>
+      </div>
+    </div>
+
+    <div style="text-align: center; margin-top: 3rem;">
+      <a href="/downloads" class="btn">Download</a>
+      <a href="/features" class="btn btn-secondary">See All Features</a>
+    </div>
+  </section>
+
+  <script>
+    const langBtns = document.querySelectorAll('.lang-btn');
+    const fortranContent = document.getElementById('fortran-content');
+    const rustContent = document.getElementById('rust-content');
+    const quickstartFortran = document.getElementById('quickstart-fortran');
+    const quickstartRust = document.getElementById('quickstart-rust');
+    const langToggle = document.getElementById('lang-toggle');
+
+    function updateUnderline(activeBtn: Element) {
+      if (!langToggle) return;
+      const btn = activeBtn as HTMLElement;
+      const toggleRect = langToggle.getBoundingClientRect();
+      const btnRect = btn.getBoundingClientRect();
+
+      const left = btnRect.left - toggleRect.left;
+      const width = btnRect.width;
+
+      langToggle.style.setProperty('--underline-left', `${left}px`);
+      langToggle.style.setProperty('--underline-width', `${width}px`);
+    }
+
+    // Initialize underline position
+    const initialActive = document.querySelector('.lang-btn.active');
+    if (initialActive) {
+      updateUnderline(initialActive);
+    }
+
+    langBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const lang = (btn as HTMLElement).dataset.lang;
+
+        // Update active state
+        langBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+
+        // Update underline position and color
+        updateUnderline(btn);
+        langToggle?.classList.remove('fortran', 'rust');
+        langToggle?.classList.add(lang!);
+
+        // Show/hide content
+        if (lang === 'fortran') {
+          fortranContent!.style.display = 'block';
+          rustContent!.style.display = 'none';
+          quickstartFortran!.style.display = 'block';
+          quickstartRust!.style.display = 'none';
+        } else {
+          fortranContent!.style.display = 'none';
+          rustContent!.style.display = 'block';
+          quickstartFortran!.style.display = 'none';
+          quickstartRust!.style.display = 'block';
+        }
+      });
+    });
+
+    // Recalculate on resize
+    window.addEventListener('resize', () => {
+      const active = document.querySelector('.lang-btn.active');
+      if (active) updateUnderline(active);
+    });
+
+    // Terminal collapse functionality
+    document.querySelectorAll('.control-btn.close').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const body = btn.closest('.terminal')?.querySelector('.terminal-body');
+        body?.classList.toggle('collapsed');
+      });
+    });
+  </script>
+</BaseLayout>

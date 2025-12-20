@@ -1,0 +1,401 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const structuredData = {
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "name": "facsimile Keyboard Shortcuts Reference",
+  "description": "Complete reference guide for facsimile terminal text editor keyboard shortcuts. VSCode-style keybindings for efficient text editing.",
+  "step": [
+    {
+      "@type": "HowToStep",
+      "name": "Save file",
+      "text": "Press Ctrl+S to save the current file"
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Find text",
+      "text": "Press Ctrl+F to open the search dialog"
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Copy text",
+      "text": "Select text and press Ctrl+C to copy"
+    }
+  ]
+};
+
+// Keybindings with differences highlighted
+// null means "not available", string means same, object means different
+type Binding = {
+  keys: string | { fortran: string | null; rust: string | null };
+  action: string;
+};
+
+type KeybindingCategory = Binding[];
+
+const keybindings: Record<string, KeybindingCategory> = {
+  "File Operations": [
+    { keys: "Ctrl+S", action: "Save file" },
+    { keys: "Ctrl+O", action: "Open file browser (Fortress)" },
+    { keys: "Ctrl+Q", action: "Quit editor" },
+    { keys: { fortran: "Ctrl+T", rust: "Alt+T" }, action: "New tab" },
+    { keys: "Alt+Q", action: "Close pane/tab" },
+    { keys: { fortran: "Ctrl+W", rust: null }, action: "Close tab (prompts to save)" },
+  ],
+  "Editing": [
+    { keys: "Ctrl+C", action: "Copy" },
+    { keys: "Ctrl+X", action: "Cut" },
+    { keys: "Ctrl+V", action: "Paste" },
+    { keys: "Ctrl+Z", action: "Undo" },
+    { keys: "Ctrl+Shift+Z / Ctrl+]", action: "Redo" },
+    { keys: "Ctrl+D", action: "Select word / next occurrence" },
+    { keys: { fortran: null, rust: "Ctrl+L" }, action: "Select line" },
+    { keys: "Ctrl+J", action: "Join lines" },
+    { keys: { fortran: null, rust: "Ctrl+T" }, action: "Transpose characters" },
+    { keys: "Alt+Up/Down", action: "Move line up/down" },
+    { keys: "Alt+Shift+Up/Down", action: "Duplicate line" },
+    { keys: "Tab", action: "Indent" },
+    { keys: "Shift+Tab", action: "Outdent" },
+  ],
+  "Kill & Yank (Emacs-style)": [
+    { keys: { fortran: "Ctrl+K", rust: "Ctrl+K" }, action: "Kill to end of line" },
+    { keys: { fortran: "Ctrl+U", rust: "Ctrl+U" }, action: "Kill to start of line" },
+    { keys: { fortran: "Ctrl+Y", rust: "Ctrl+Y" }, action: "Yank (paste from kill ring)" },
+    { keys: { fortran: null, rust: "Alt+Y" }, action: "Cycle yank stack" },
+  ],
+  "Word Deletion": [
+    { keys: { fortran: "Alt+Backspace", rust: "Ctrl+W / Alt+Backspace" }, action: "Delete word backward" },
+    { keys: "Alt+D", action: "Delete word forward" },
+  ],
+  "Navigation": [
+    { keys: "Ctrl+G / F5", action: "Go to line (line:col syntax)" },
+    { keys: "Home / Ctrl+A", action: "Go to beginning of line (smart)" },
+    { keys: "End / Ctrl+E", action: "Go to end of line" },
+    { keys: "Alt+Left/Right", action: "Move by word" },
+    { keys: { fortran: null, rust: "Alt+B / Alt+F" }, action: "Move word back/forward" },
+    { keys: "Ctrl+Home / Ctrl+End", action: "Jump to start/end of file" },
+    { keys: "PageUp/PageDown", action: "Scroll page" },
+    { keys: "Alt+[ / Alt+]", action: "Jump to matching bracket" },
+    { keys: { fortran: "Alt+,", rust: null }, action: "Jump back in navigation history" },
+  ],
+  "Search & Replace": [
+    { keys: "Ctrl+F", action: "Find" },
+    { keys: "Ctrl+R", action: "Find and replace" },
+    { keys: "F3", action: "Find next" },
+    { keys: "Shift+F3", action: "Find previous" },
+    { keys: { fortran: null, rust: "F4" }, action: "Search in files" },
+    { keys: { fortran: null, rust: "Alt+I" }, action: "Toggle case sensitivity" },
+    { keys: { fortran: null, rust: "Alt+X" }, action: "Toggle regex mode" },
+    { keys: { fortran: null, rust: "Alt+Enter" }, action: "Replace all" },
+    { keys: "Escape", action: "Close search" },
+  ],
+  "Selection & Multi-Cursor": [
+    { keys: "Shift+Arrow", action: "Extend selection" },
+    { keys: "Alt+Shift+Left/Right", action: "Select by word" },
+    { keys: "Ctrl+Alt+Up/Down", action: "Add cursor above/below" },
+  ],
+  "Panes & Tabs": [
+    { keys: "Ctrl+B / F3", action: "Toggle file tree" },
+    { keys: "Alt+V", action: "Split vertical" },
+    { keys: "Alt+S", action: "Split horizontal" },
+    { keys: "Alt+H/J/K/L", action: "Navigate panes (vim-style)" },
+    { keys: { fortran: "Ctrl+Shift+Arrow", rust: null }, action: "Navigate panes (arrow keys)" },
+    { keys: { fortran: null, rust: "Alt+N / Alt+P" }, action: "Next/previous pane" },
+    { keys: "Alt+1-9", action: "Switch to tab N" },
+    { keys: { fortran: "Ctrl+1-9", rust: null }, action: "Switch to tab N (alternate)" },
+    { keys: { fortran: null, rust: "Alt+. / Alt+," }, action: "Next/previous tab" },
+    { keys: { fortran: "Ctrl+Alt+Left/Right", rust: null }, action: "Next/previous tab" },
+  ],
+  "File Tree": [
+    { keys: "j/k or Up/Down", action: "Navigate files" },
+    { keys: "Enter", action: "Open file" },
+    { keys: "Right / Left", action: "Expand / Collapse directory" },
+    { keys: "Space", action: "Toggle selection" },
+    { keys: "a", action: "Add file" },
+    { keys: "f", action: "Create folder" },
+    { keys: "d", action: "Delete selected" },
+    { keys: "m", action: "Move/rename" },
+    { keys: "Alt+.", action: "Toggle hidden files" },
+    { keys: "Alt+G", action: "Git status" },
+  ],
+  "LSP": [
+    { keys: "F12", action: "Go to definition" },
+    { keys: { fortran: "Ctrl+\\ / Alt+G", rust: null }, action: "Go to definition (alternate)" },
+    { keys: "Shift+F12", action: "Find all references" },
+    { keys: { fortran: "Alt+R", rust: null }, action: "Find all references (alternate)" },
+    { keys: { fortran: "Ctrl+H / F1", rust: "F1" }, action: "Hover info" },
+    { keys: "F2", action: "Rename symbol" },
+    { keys: { fortran: "Ctrl+Space", rust: "Ctrl+N" }, action: "Trigger completion" },
+    { keys: "Alt+M", action: "LSP server manager" },
+    { keys: { fortran: "F4 / Alt+O", rust: null }, action: "Document symbols" },
+    { keys: { fortran: "F6 / Alt+P", rust: null }, action: "Workspace symbols" },
+    { keys: { fortran: "F8 / Alt+E", rust: null }, action: "Toggle diagnostics panel" },
+    { keys: { fortran: "F10 / Alt+.", rust: null }, action: "Code actions" },
+    { keys: { fortran: "Shift+Alt+F", rust: null }, action: "Format document" },
+  ],
+  "Text Manipulation": [
+    { keys: "Ctrl+/ / Ctrl+7", action: "Toggle line comment" },
+    { keys: "Alt+'", action: "Cycle quotes (\"/'/`)" },
+    { keys: { fortran: "Alt+Shift+'", rust: 'Alt+"' }, action: "Remove surrounding quotes" },
+    { keys: { fortran: null, rust: "Alt+(" }, action: "Cycle brackets ((/{/[)" },
+    { keys: { fortran: null, rust: "Alt+)" }, action: "Remove surrounding brackets" },
+  ],
+  "UI & Help": [
+    { keys: { fortran: "Ctrl+?", rust: "Shift+F1" }, action: "Show help menu" },
+    { keys: { fortran: "Ctrl+L", rust: null }, action: "Clear and redraw screen" },
+    { keys: { fortran: null, rust: "Ctrl+P" }, action: "Command palette" },
+  ],
+};
+---
+
+<BaseLayout
+  title="Keyboard Shortcuts - facsimile Terminal Text Editor"
+  description="Complete keyboard shortcuts reference for facsimile. VSCode-style keybindings for file operations, editing, navigation, search, and more. Print-friendly cheat sheet."
+  keywords="facsimile keybindings, terminal editor shortcuts, vscode keyboard shortcuts terminal, text editor hotkeys, cli editor keybindings, keyboard shortcuts cheat sheet"
+>
+  <script type="application/ld+json" set:html={JSON.stringify(structuredData)} />
+
+  <section>
+    <h2 style="margin-top: 0;">Keyboard Shortcuts</h2>
+    <p style="margin-bottom: 1.5rem;">
+      Both versions use VSCode-style keybindings. Toggle between versions to see differences.
+    </p>
+
+    <div class="lang-toggle" id="lang-toggle">
+      <button class="lang-btn active" data-lang="fortran">Fortran</button>
+      <button class="lang-btn" data-lang="rust">Rust</button>
+    </div>
+
+    <div class="keybindings-container">
+      {Object.entries(keybindings).map(([category, bindings]) => (
+        <div class="keybinding-section">
+          <h3>{category}</h3>
+          <table class="keybinding-table">
+            <tbody>
+              {bindings.map(({ keys, action }) => {
+                const isObject = typeof keys === 'object';
+                const fortranKey = isObject ? keys.fortran : keys;
+                const rustKey = isObject ? keys.rust : keys;
+                const isDifferent = isObject && fortranKey !== rustKey;
+
+                return (
+                  <tr class:list={[{ 'has-diff': isDifferent }]}>
+                    <td class="key-cell">
+                      {/* Fortran keys */}
+                      <span class="fortran-keys" data-version="fortran">
+                        {fortranKey ? (
+                          fortranKey.split(' / ').map((key, i) => (
+                            <>
+                              {i > 0 && <span class="key-separator"> or </span>}
+                              <kbd>{key}</kbd>
+                            </>
+                          ))
+                        ) : (
+                          <span class="not-available">—</span>
+                        )}
+                      </span>
+                      {/* Rust keys */}
+                      <span class="rust-keys" data-version="rust" style="display: none;">
+                        {rustKey ? (
+                          rustKey.split(' / ').map((key, i) => (
+                            <>
+                              {i > 0 && <span class="key-separator"> or </span>}
+                              <kbd>{key}</kbd>
+                            </>
+                          ))
+                        ) : (
+                          <span class="not-available">—</span>
+                        )}
+                      </span>
+                    </td>
+                    <td class="action-cell">
+                      {action}
+                      {isDifferent && <span class="diff-indicator" title="Different between versions">*</span>}
+                    </td>
+                  </tr>
+                );
+              })}
+            </tbody>
+          </table>
+        </div>
+      ))}
+    </div>
+
+    <div class="legend">
+      <span class="diff-indicator">*</span> = Different keybinding between Fortran and Rust versions
+      <span class="not-available" style="margin-left: 1rem;">—</span> = Not available in this version
+    </div>
+
+    <div style="text-align: center; margin-top: 2rem;">
+      <a href="/features" class="btn btn-secondary">View All Features</a>
+      <a href="/downloads" class="btn">Download</a>
+    </div>
+  </section>
+
+  <style>
+    .keybindings-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      gap: 2rem;
+    }
+
+    .keybinding-section {
+      background: var(--bg-secondary);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 1.25rem;
+    }
+
+    .keybinding-section h3 {
+      font-size: 1rem;
+      font-weight: 600;
+      margin: 0 0 1rem 0;
+      padding-bottom: 0.75rem;
+      border-bottom: 1px solid var(--border);
+      color: var(--text);
+    }
+
+    .keybinding-table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    .keybinding-table tr {
+      border-bottom: 1px solid var(--border);
+    }
+
+    .keybinding-table tr:last-child {
+      border-bottom: none;
+    }
+
+    .keybinding-table td {
+      padding: 0.5rem 0;
+      vertical-align: middle;
+    }
+
+    .key-cell {
+      width: 45%;
+      white-space: nowrap;
+    }
+
+    .action-cell {
+      color: var(--text-muted);
+      font-size: 0.9rem;
+    }
+
+    kbd {
+      background: var(--bg-tertiary);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      padding: 0.2rem 0.5rem;
+      font-family: 'SF Mono', 'Menlo', monospace;
+      font-size: 0.8rem;
+      color: var(--text);
+      display: inline-block;
+      margin-right: 0.25rem;
+    }
+
+    .key-separator {
+      color: var(--text-dim);
+      font-size: 0.75rem;
+      margin: 0 0.25rem;
+    }
+
+    .not-available {
+      color: var(--text-dim);
+      font-style: italic;
+      font-size: 0.85rem;
+    }
+
+    .diff-indicator {
+      color: #f5a623;
+      font-weight: bold;
+      margin-left: 0.25rem;
+    }
+
+    .legend {
+      margin-top: 1.5rem;
+      padding: 0.75rem 1rem;
+      background: var(--bg-secondary);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      text-align: center;
+    }
+
+    @media print {
+      body {
+        background: white;
+        color: black;
+      }
+
+      .keybinding-section {
+        break-inside: avoid;
+        background: white;
+        border: 1px solid #ccc;
+      }
+
+      kbd {
+        background: #f0f0f0;
+        border-color: #ccc;
+        color: black;
+      }
+    }
+  </style>
+
+  <script>
+    // Language toggle
+    const langBtns = document.querySelectorAll('.lang-btn');
+    const langToggle = document.getElementById('lang-toggle');
+    const fortranKeys = document.querySelectorAll('.fortran-keys');
+    const rustKeys = document.querySelectorAll('.rust-keys');
+
+    function updateUnderline(activeBtn: Element) {
+      if (!langToggle) return;
+      const btn = activeBtn as HTMLElement;
+      const toggleRect = langToggle.getBoundingClientRect();
+      const btnRect = btn.getBoundingClientRect();
+
+      const left = btnRect.left - toggleRect.left;
+      const width = btnRect.width;
+
+      langToggle.style.setProperty('--underline-left', `${left}px`);
+      langToggle.style.setProperty('--underline-width', `${width}px`);
+    }
+
+    // Initialize underline position
+    const initialActive = document.querySelector('.lang-btn.active');
+    if (initialActive) {
+      updateUnderline(initialActive);
+    }
+
+    langBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const lang = btn.dataset.lang;
+
+        langBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+
+        updateUnderline(btn);
+        langToggle?.classList.remove('fortran', 'rust');
+        langToggle?.classList.add(lang!);
+
+        if (lang === 'fortran') {
+          fortranKeys.forEach(el => (el as HTMLElement).style.display = 'inline');
+          rustKeys.forEach(el => (el as HTMLElement).style.display = 'none');
+        } else {
+          fortranKeys.forEach(el => (el as HTMLElement).style.display = 'none');
+          rustKeys.forEach(el => (el as HTMLElement).style.display = 'inline');
+        }
+      });
+    });
+
+    // Recalculate on resize
+    window.addEventListener('resize', () => {
+      const active = document.querySelector('.lang-btn.active');
+      if (active) updateUnderline(active);
+    });
+  </script>
+</BaseLayout>

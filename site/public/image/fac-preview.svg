@@ -1,0 +1,55 @@
+<svg width="1200" height="630" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0a0a0a"/>
+      <stop offset="100%" style="stop-color:#1a1a1a"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="630" fill="url(#bg)"/>
+
+  <!-- Terminal window -->
+  <rect x="150" y="120" width="900" height="400" rx="12" fill="#141414" stroke="#333" stroke-width="1"/>
+
+  <!-- Terminal header -->
+  <rect x="150" y="120" width="900" height="40" rx="12" fill="#1a1a1a"/>
+  <rect x="150" y="148" width="900" height="12" fill="#1a1a1a"/>
+
+  <!-- Window buttons -->
+  <circle cx="180" cy="140" r="7" fill="#ff5f56"/>
+  <circle cx="205" cy="140" r="7" fill="#ffbd2e"/>
+  <circle cx="230" cy="140" r="7" fill="#27c93f"/>
+
+  <!-- Terminal title -->
+  <text x="600" y="145" text-anchor="middle" fill="#666" font-family="SF Mono, Menlo, monospace" font-size="13">facsimile</text>
+
+  <!-- Code content -->
+  <text x="175" y="195" fill="#6a9955" font-family="SF Mono, Menlo, monospace" font-size="16"># VSCode keybindings in your terminal</text>
+  <text x="175" y="225" fill="#4ec9b0" font-family="SF Mono, Menlo, monospace" font-size="16">$ fac myproject/</text>
+
+  <text x="175" y="275" fill="#888" font-family="SF Mono, Menlo, monospace" font-size="14">  1</text>
+  <text x="215" y="275" fill="#569cd6" font-family="SF Mono, Menlo, monospace" font-size="16">def</text>
+  <text x="255" y="275" fill="#dcdcaa" font-family="SF Mono, Menlo, monospace" font-size="16">main</text>
+  <text x="305" y="275" fill="#e5e5e5" font-family="SF Mono, Menlo, monospace" font-size="16">():</text>
+
+  <text x="175" y="300" fill="#888" font-family="SF Mono, Menlo, monospace" font-size="14">  2</text>
+  <text x="215" y="300" fill="#e5e5e5" font-family="SF Mono, Menlo, monospace" font-size="16">    print(</text>
+  <text x="315" y="300" fill="#ce9178" font-family="SF Mono, Menlo, monospace" font-size="16">"Hello, World!"</text>
+  <text x="485" y="300" fill="#e5e5e5" font-family="SF Mono, Menlo, monospace" font-size="16">)</text>
+
+  <text x="175" y="325" fill="#ffff00" font-family="SF Mono, Menlo, monospace" font-size="14">  3</text>
+  <text x="215" y="325" fill="#e5e5e5" font-family="SF Mono, Menlo, monospace" font-size="16">    </text>
+  <rect x="243" y="310" width="10" height="20" fill="#fff" opacity="0.8"/>
+
+  <text x="175" y="350" fill="#888" font-family="SF Mono, Menlo, monospace" font-size="14">  4</text>
+
+  <!-- Status bar -->
+  <rect x="150" y="480" width="900" height="40" fill="#333"/>
+  <text x="170" y="505" fill="#fff" font-family="SF Mono, Menlo, monospace" font-size="14">main.py [+]</text>
+  <text x="900" y="505" fill="#fff" font-family="SF Mono, Menlo, monospace" font-size="14">Ln 3, Col 5</text>
+
+  <!-- Title and tagline -->
+  <text x="600" y="575" text-anchor="middle" fill="#e5e5e5" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, sans-serif" font-size="32" font-weight="600">facsimile</text>
+  <text x="600" y="610" text-anchor="middle" fill="#888" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, sans-serif" font-size="18">Terminal text editor with VSCode keybindings</text>
+</svg>

@@ -1,0 +1,398 @@
+{
+  "fortran": [
+    {
+      "version": "0.9.4",
+      "date": "2025-12-18",
+      "changelog": "Fix syntax highlighting breaking on single backticks, fix terminal escape sequence leak and scroll artifacts.",
+      "platforms": {
+        "windows": [
+          {
+            "filename": "facsimile-0.9.4-windows-x86_64.zip",
+            "arch": "x86_64",
+            "type": "zip"
+          }
+        ],
+        "macos": [
+          {
+            "filename": "facsimile-0.9.4-macos-arm64.tar.gz",
+            "arch": "arm64",
+            "type": "archive"
+          }
+        ],
+        "linux": [
+          {
+            "filename": "facsimile-0.9.4-linux-x86_64.tar.gz",
+            "arch": "x86_64",
+            "type": "archive"
+          }
+        ]
+      }
+    },
+    {
+      "version": "0.7.6",
+      "date": "2025-12-07",
+      "changelog": "Full LSP support, syntax highlighting, and VSCode-style keybindings. Windows support added.",
+      "platforms": {
+        "windows": [
+          {
+            "filename": "facsimile-0.7.6-windows-x86_64.zip",
+            "arch": "x86_64",
+            "type": "zip"
+          }
+        ],
+        "macos": [
+          {
+            "filename": "facsimile-0.7.6-macos-arm64.tar.gz",
+            "arch": "arm64",
+            "type": "archive"
+          }
+        ],
+        "linux": [
+          {
+            "filename": "facsimile-0.7.6-linux-x86_64.tar.gz",
+            "arch": "x86_64",
+            "type": "archive"
+          }
+        ]
+      }
+    }
+  ],
+  "rust": [
+    {
+      "version": "0.9.9",
+      "date": "2025-12-20",
+      "changelog": "New release.",
+      "platforms": {
+        "windows": [
+          {
+            "filename": "fackr-0.9.9-windows-x86_64.zip",
+            "arch": "x86_64",
+            "type": "zip"
+          }
+        ],
+        "macos": [
+          {
+            "filename": "fackr-0.9.9-macos-arm64.tar.gz",
+            "arch": "arm64",
+            "type": "archive"
+          }
+        ],
+        "linux": [
+          {
+            "filename": "fackr-0.9.9-linux-x86_64.tar.gz",
+            "arch": "x86_64",
+            "type": "archive"
+          }
+        ]
+      }
+    },
+    {
+      "version": "0.9.8",
+      "date": "2025-12-12",
+      "changelog": "Unix kill commands (Ctrl+K/U) and yank stack (Ctrl+Y, Alt+Y), help menu fixes.",
+      "platforms": {
+        "windows": [
+          {
+            "filename": "fackr-0.9.8-windows-x86_64.zip",
+            "arch": "x86_64",
+            "type": "zip"
+          }
+        ],
+        "macos": [
+          {
+            "filename": "fackr-0.9.8-macos-arm64.tar.gz",
+            "arch": "arm64",
+            "type": "archive"
+          }
+        ],
+        "linux": [
+          {
+            "filename": "fackr-0.9.8-linux-x86_64.tar.gz",
+            "arch": "x86_64",
+            "type": "archive"
+          }
+        ]
+      }
+    },
+    {
+      "version": "0.9.7",
+      "date": "2025-12-11",
+      "changelog": "Fix shift-key handling on kitty protocol terminals.",
+      "platforms": {
+        "windows": [
+          {
+            "filename": "fackr-0.9.7-windows-x86_64.zip",
+            "arch": "x86_64",
+            "type": "zip"
+          }
+        ],
+        "macos": [
+          {
+            "filename": "fackr-0.9.7-macos-arm64.tar.gz",
+            "arch": "arm64",
+            "type": "archive"
+          }
+        ],
+        "linux": [
+          {
+            "filename": "fackr-0.9.7-linux-x86_64.tar.gz",
+            "arch": "x86_64",
+            "type": "archive"
+          }
+        ]
+      }
+    },
+    {
+      "version": "0.9.6",
+      "date": "2025-12-11",
+      "changelog": "Fix command palette char input, create new file from CLI.",
+      "platforms": {
+        "windows": [
+          {
+            "filename": "fackr-0.9.6-windows-x86_64.zip",
+            "arch": "x86_64",
+            "type": "zip"
+          }
+        ],
+        "macos": [
+          {
+            "filename": "fackr-0.9.6-macos-arm64.tar.gz",
+            "arch": "arm64",
+            "type": "archive"
+          }
+        ],
+        "linux": [
+          {
+            "filename": "fackr-0.9.6-linux-x86_64.tar.gz",
+            "arch": "x86_64",
+            "type": "archive"
+          }
+        ]
+      }
+    },
+    {
+      "version": "0.9.5",
+      "date": "2025-12-11",
+      "changelog": "Command palette (Ctrl+P) with fuzzy search.",
+      "platforms": {
+        "windows": [
+          {
+            "filename": "fackr-0.9.5-windows-x86_64.zip",
+            "arch": "x86_64",
+            "type": "zip"
+          }
+        ],
+        "macos": [
+          {
+            "filename": "fackr-0.9.5-macos-arm64.tar.gz",
+            "arch": "arm64",
+            "type": "archive"
+          }
+        ],
+        "linux": [
+          {
+            "filename": "fackr-0.9.5-linux-x86_64.tar.gz",
+            "arch": "x86_64",
+            "type": "archive"
+          }
+        ]
+      }
+    },
+    {
+      "version": "0.9.4",
+      "date": "2025-12-11",
+      "changelog": "Ctrl+D scrolls viewport to show newly added cursor.",
+      "platforms": {
+        "windows": [
+          {
+            "filename": "fackr-0.9.4-windows-x86_64.zip",
+            "arch": "x86_64",
+            "type": "zip"
+          }
+        ],
+        "macos": [
+          {
+            "filename": "fackr-0.9.4-macos-arm64.tar.gz",
+            "arch": "arm64",
+            "type": "archive"
+          }
+        ],
+        "linux": [
+          {
+            "filename": "fackr-0.9.4-linux-x86_64.tar.gz",
+            "arch": "x86_64",
+            "type": "archive"
+          }
+        ]
+      }
+    },
+    {
+      "version": "0.9.0",
+      "date": "2025-12-11",
+      "changelog": "Ctrl+/ toggle line comment, performance optimizations.",
+      "platforms": {
+        "windows": [
+          {
+            "filename": "fackr-0.9.0-windows-x86_64.zip",
+            "arch": "x86_64",
+            "type": "zip"
+          }
+        ],
+        "macos": [
+          {
+            "filename": "fackr-0.9.0-macos-arm64.tar.gz",
+            "arch": "arm64",
+            "type": "archive"
+          }
+        ],
+        "linux": [
+          {
+            "filename": "fackr-0.9.0-linux-x86_64.tar.gz",
+            "arch": "x86_64",
+            "type": "archive"
+          }
+        ]
+      }
+    },
+    {
+      "version": "0.8.0",
+      "date": "2025-12-10",
+      "changelog": "Ctrl+G/F5 goto line with line:col syntax, Ctrl+O fortress file browser, multi-cursor same-line edit fix.",
+      "platforms": {
+        "windows": [
+          {
+            "filename": "fackr-0.8.0-windows-x86_64.zip",
+            "arch": "x86_64",
+            "type": "zip"
+          }
+        ],
+        "macos": [
+          {
+            "filename": "fackr-0.8.0-macos-arm64.tar.gz",
+            "arch": "arm64",
+            "type": "archive"
+          }
+        ],
+        "linux": [
+          {
+            "filename": "fackr-0.8.0-linux-x86_64.tar.gz",
+            "arch": "x86_64",
+            "type": "archive"
+          }
+        ]
+      }
+    },
+    {
+      "version": "0.7.0",
+      "date": "2025-12-09",
+      "changelog": "Ctrl+F/Ctrl+R find and replace with regex support, fuzzy filter improvements, references panel visual fix.",
+      "platforms": {
+        "windows": [
+          {
+            "filename": "fackr-0.7.0-windows-x86_64.zip",
+            "arch": "x86_64",
+            "type": "zip"
+          }
+        ],
+        "macos": [
+          {
+            "filename": "fackr-0.7.0-macos-arm64.tar.gz",
+            "arch": "arm64",
+            "type": "archive"
+          }
+        ],
+        "linux": [
+          {
+            "filename": "fackr-0.7.0-linux-x86_64.tar.gz",
+            "arch": "x86_64",
+            "type": "archive"
+          }
+        ]
+      }
+    },
+    {
+      "version": "0.6.0",
+      "date": "2025-12-08",
+      "changelog": "Shift+F12 references panel with filtering, syntax highlighting for 30+ languages, LSP support with auto-completion and diagnostics.",
+      "platforms": {
+        "windows": [
+          {
+            "filename": "fackr-0.6.0-windows-x86_64.zip",
+            "arch": "x86_64",
+            "type": "zip"
+          }
+        ],
+        "macos": [
+          {
+            "filename": "fackr-0.6.0-macos-arm64.tar.gz",
+            "arch": "arm64",
+            "type": "archive"
+          }
+        ],
+        "linux": [
+          {
+            "filename": "fackr-0.6.0-linux-x86_64.tar.gz",
+            "arch": "x86_64",
+            "type": "archive"
+          }
+        ]
+      }
+    },
+    {
+      "version": "0.5.0",
+      "date": "2025-12-08",
+      "changelog": "Syntax highlighting for 30+ languages, LSP support with auto-completion and diagnostics, LSP server auto-install, improved file tree navigation.",
+      "platforms": {
+        "windows": [
+          {
+            "filename": "fackr-0.5.0-windows-x86_64.zip",
+            "arch": "x86_64",
+            "type": "zip"
+          }
+        ],
+        "macos": [
+          {
+            "filename": "fackr-0.5.0-macos-arm64.tar.gz",
+            "arch": "arm64",
+            "type": "archive"
+          }
+        ],
+        "linux": [
+          {
+            "filename": "fackr-0.5.0-linux-x86_64.tar.gz",
+            "arch": "x86_64",
+            "type": "archive"
+          }
+        ]
+      }
+    },
+    {
+      "version": "0.4.0",
+      "date": "2025-12-07",
+      "changelog": "Initial public release of fackr - Rust reimplementation of facsimile with VSCode-style keybindings.",
+      "platforms": {
+        "windows": [
+          {
+            "filename": "fackr-0.4.0-windows-x86_64.zip",
+            "arch": "x86_64",
+            "type": "zip"
+          }
+        ],
+        "macos": [
+          {
+            "filename": "fackr-0.4.0-macos-arm64.tar.gz",
+            "arch": "arm64",
+            "type": "archive"
+          }
+        ],
+        "linux": [
+          {
+            "filename": "fackr-0.4.0-linux-x86_64.tar.gz",
+            "arch": "x86_64",
+            "type": "archive"
+          }
+        ]
+      }
+    }
+  ]
+}
