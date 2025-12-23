@@ -59,6 +59,62 @@
   ],
   "rust": [
     {
+      "version": "1.0.4",
+      "date": "2025-12-23",
+      "changelog": "Fix last line cursor visual mismatch.",
+      "platforms": {
+        "windows": [
+          {
+            "filename": "fackr-1.0.4-windows-x86_64.zip",
+            "arch": "x86_64",
+            "type": "zip"
+          }
+        ],
+        "macos": [
+          {
+            "filename": "fackr-1.0.4-macos-arm64.tar.gz",
+            "arch": "arm64",
+            "type": "archive"
+          }
+        ],
+        "linux": [
+          {
+            "filename": "fackr-1.0.4-linux-x86_64.tar.gz",
+            "arch": "x86_64",
+            "type": "archive"
+          }
+        ]
+      }
+    },
+    {
+      "version": "1.0.2",
+      "date": "2025-12-21",
+      "changelog": "Fix save functionality.",
+      "platforms": {
+        "windows": [
+          {
+            "filename": "fackr-1.0.2-windows-x86_64.zip",
+            "arch": "x86_64",
+            "type": "zip"
+          }
+        ],
+        "macos": [
+          {
+            "filename": "fackr-1.0.2-macos-arm64.tar.gz",
+            "arch": "arm64",
+            "type": "archive"
+          }
+        ],
+        "linux": [
+          {
+            "filename": "fackr-1.0.2-linux-x86_64.tar.gz",
+            "arch": "x86_64",
+            "type": "archive"
+          }
+        ]
+      }
+    },
+    {
       "version": "1.0.3",
       "date": "2025-12-21",
       "changelog": "Workspace state persistence, always render tab bar.",
