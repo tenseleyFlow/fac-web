@@ -63,6 +63,10 @@ const getFileLabel = (type: string) => {
       </div>
 
       <div id="fortran-binary" class="method-content">
+        <div class="download-warning" role="note">
+          <strong>Windows note:</strong> Windows binaries are currently untested on a real Windows machine and may need extra caution.
+        </div>
+
         {sortedFortran.length === 0 ? (
           <div class="empty-state">
             <p>No releases available yet. Check back soon!</p>
@@ -203,6 +207,10 @@ const getFileLabel = (type: string) => {
       </div>
 
       <div id="rust-binary" class="method-content">
+        <div class="download-warning" role="note">
+          <strong>Windows note:</strong> Windows binaries are currently untested on a real Windows machine and may need extra caution.
+        </div>
+
         {sortedRust.length === 0 ? (
           <div class="empty-state">
             <p>No pre-built binaries available yet.</p>
@@ -376,6 +384,20 @@ const getFileLabel = (type: string) => {
       font-size: 0.9rem;
       margin: 0.5rem 0 1.5rem 0;
       line-height: 1.5;
+    }
+
+    .download-warning {
+      margin-bottom: 1rem;
+      padding: 0.9rem 1rem;
+      background: color-mix(in srgb, var(--accent) 8%, var(--bg-secondary));
+      border: 1px solid color-mix(in srgb, var(--accent) 30%, var(--border));
+      border-radius: 8px;
+      color: var(--text);
+      line-height: 1.5;
+    }
+
+    .download-warning strong {
+      color: var(--accent);
     }
 
     .platform-section {
