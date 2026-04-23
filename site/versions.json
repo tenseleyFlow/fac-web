@@ -87,6 +87,34 @@
   ],
   "rust": [
     {
+      "version": "1.1.2",
+      "date": "2025-12-29",
+      "changelog": "Fixes to Linux terminal problems.",
+      "platforms": {
+        "windows": [
+          {
+            "filename": "fackr-1.1.2-windows-x86_64.zip",
+            "arch": "x86_64",
+            "type": "zip"
+          }
+        ],
+        "macos": [
+          {
+            "filename": "fackr-1.1.2-macos-arm64.tar.gz",
+            "arch": "arm64",
+            "type": "archive"
+          }
+        ],
+        "linux": [
+          {
+            "filename": "fackr-1.1.2-linux-x86_64.tar.gz",
+            "arch": "x86_64",
+            "type": "archive"
+          }
+        ]
+      }
+    },
+    {
       "version": "1.1.0",
       "date": "2025-12-23",
       "changelog": "Ghost text suggestions for inline code completions.",
